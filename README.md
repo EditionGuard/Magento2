@@ -1,4 +1,4 @@
-# EditionGuard eBook Sales with DRM 
+# EditionGuard eBook Sales with DRM extension for Magento 2.1+ Stores
 
 ## Purpose
 
