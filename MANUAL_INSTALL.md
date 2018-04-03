@@ -1,4 +1,4 @@
-# Magento 2.2 Extension Install
+# Manual Extension Installation on Magento 2.1+ stores
 
 * Create folder named 'editionguard' in the Magento root folder
 * Unzip extension inside the editionguard folder
