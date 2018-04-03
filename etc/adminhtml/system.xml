@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">  
+    <system>
+        <tab id="edition_guard" translate="label" sortOrder="310">
+            <label>EditionGuard</label>
+        </tab>
+        <section id="editionguard" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Settings</label>
+            <tab>edition_guard</tab>
+            <resource>EditionGuard_EditionGuard::general_configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>EditionGuard Settings</label>                
+                <field id="email" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label,comment" type="text">
+                    <label>Email</label>
+                    <comment>The email address associated with your EditionGuard account</comment>
+                </field>
+                <field id="distributerid" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="20" translate="label,comment" type="text">
+                    <label>Distributor Id</label>
+                    <comment>Your EditionGuard Distributor Id</comment>
+                </field>
+                <field id="sharedsecret" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="30" translate="label,comment" type="text">
+                    <label>Shared Secret</label>
+                    <comment>The shared secret for your EditionGuard API access</comment>
+                </field>                
+            </group>
+        </section>
+        <section id="catalog">
+            <group id="downloadable">
+                <field id="editionguard" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1000" translate="label,comment" type="select">
+                    <label>Use EditionGuard DRM</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="expiry" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1010" translate="label,comment" type="text">
+                    <label>Expiry (days)</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

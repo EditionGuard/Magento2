@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="\Magento\Downloadable\Ui\DataProvider\Product\Form\Modifier\Links">
+        <plugin name="EditionGuard_Modifier_Links_Plugin" type="EditionGuard\EditionGuard\Plugin\ProductFormModifierLinksPlugin" sortOrder="1" disabled="false" />
+    </type>
+    <type name="\Magento\Downloadable\Ui\DataProvider\Product\Form\Modifier\Data\Links">
+        <plugin name="EditionGuard_Modifier_Data_Links_Plugin" type="EditionGuard\EditionGuard\Plugin\ProductFormModifierDataLinksPlugin" sortOrder="1" disabled="false" />
+    </type>
+    <preference for="Magento\Downloadable\Block\Customer\Products\ListProducts" type="EditionGuard\EditionGuard\Block\Customer\Products\ListProducts" />
+    <preference for="Magento\Downloadable\Model\Link" type="EditionGuard\EditionGuard\Model\Link" />        
+    <preference for="Magento\Downloadable\Model\LinkRepository" type="EditionGuard\EditionGuard\Model\LinkRepository" />
+</config>

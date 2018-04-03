@@ -1,0 +1,23 @@
+{
+    "name": "editionguard/module-editionguard",
+    "description": "EditionGuard: Sell eBooks with DRM Extension for Magento 2 Integration ",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "EditionGuard",
+            "email": "support@editionguard.com"
+        }
+    ],
+    "require": {},
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "EditionGuard\\EditionGuard\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
