@@ -126,17 +126,17 @@ class LinkRepository extends \Magento\Downloadable\Model\LinkRepository
     public function save($sku, LinkInterface $link, $isGlobalScopeContent = true)
     {
         $product = $this->productRepository->get($sku, true);
-        if ($link->getId() !== null) {
-            return $this->updateLink($product, $link, $isGlobalScopeContent);
-        } else {
             if ($product->getTypeId() !== \Magento\Downloadable\Model\Product\Type::TYPE_DOWNLOADABLE) {
                 throw new InputException(__('Provided product must be type \'downloadable\'.'));
             }
             $validateLinkContent = !($link->getLinkType() === 'file' && $link->getLinkFile());
             $validateSampleContent = !($link->getSampleType() === 'file' && $link->getSampleFile());
-            if (!$this->contentValidator->isValid($link, $validateLinkContent, $validateSampleContent)) {
-                throw new InputException(__('Provided link information is invalid.'));
-            }
+            
+            if($link->getLinkType() !== 'ebook') {
+	        if (!$this->contentValidator->isValid($link, $validateLinkContent, $validateSampleContent)) {
+	            throw new InputException(__('Provided link information is invalid.'));
+	        }
+	    }
 
             if (!in_array($link->getLinkType(), ['url', 'file','ebook'], true)) {
                 throw new InputException(__('Invalid link type.'));
@@ -146,7 +146,6 @@ class LinkRepository extends \Magento\Downloadable\Model\LinkRepository
                 throw new InputException(__('Link title cannot be empty.'));
             }
             return $this->saveLink($product, $link, $isGlobalScopeContent);
-        }
     }
 
     /**
